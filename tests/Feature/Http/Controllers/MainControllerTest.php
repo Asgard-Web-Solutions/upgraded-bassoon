@@ -14,4 +14,11 @@ class MainControllerTest extends TestCase
 
         $response->assertStatus(200);        
     }
+
+    public function test_index_page_loads_template()
+    {
+        $response = $this->get('/');
+
+        $response->assertViewIs('main.index');
+    }
 }
